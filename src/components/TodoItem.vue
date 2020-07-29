@@ -24,6 +24,7 @@ export default {
 .todo {
   margin: 1em;
   padding: 1em;
+  border-bottom: 1px dashed #333;
 }
 
 .completed {
