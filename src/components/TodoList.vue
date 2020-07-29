@@ -1,7 +1,5 @@
 <template>
   <div id="TodoList">
-    <h1>Todos</h1>
-
     <TodoItem
       v-bind:key="todo.id"
       v-bind:todo="todo"

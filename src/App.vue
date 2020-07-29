@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <Header />
     <TodoList v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
 <script>
-import TodoList from "./components/TodoList.vue";
+import Header from "./components/layout/Header";
+import TodoList from "./components/TodoList";
 
 export default {
   name: "App",
   components: {
+    Header,
     TodoList,
   },
   data() {
