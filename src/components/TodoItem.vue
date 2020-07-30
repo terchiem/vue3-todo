@@ -1,7 +1,7 @@
 <template>
-  <div class="todo" v-bind:class="{'completed' : todo.completed}">
+  <div class="todo" :class="{'completed' : todo.completed}">
     <p>
-      <input type="checkbox" v-on:change="toggleComplete" v-bind:checked="todo.completed" />
+      <input type="checkbox" v-on:change="toggleComplete" :checked="todo.completed" />
       {{ todo.title }}
       <button @click="$emit('del-todo', todo.id)" class="delete">x</button>
     </p>
@@ -11,7 +11,12 @@
 <script>
 export default {
   name: "TodoItem",
-  props: ["todo"],
+  props: {
+    todo: {
+      type: Object,
+      required: true
+    },
+  },
   methods: {
     toggleComplete() {
       this.todo.completed = !this.todo.completed;

@@ -1,8 +1,8 @@
 <template>
   <div id="TodoList">
     <TodoItem
-      v-bind:key="todo.id"
-      v-bind:todo="todo"
+      :key="todo.id"
+      :todo="todo"
       v-for="todo in todos"
       v-on:del-todo="$emit('del-todo', todo.id)"
     />
@@ -14,7 +14,12 @@ import TodoItem from "./TodoItem";
 
 export default {
   name: "TodoList",
-  props: ["todos"],
+  props: {
+    todos: {
+      type: Array,
+      required: true
+    }
+  },
   components: {
     TodoItem,
   },
